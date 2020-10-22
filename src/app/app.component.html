@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+  </head>
+  <body>
+    <h2>{{ country }}</h2>
+    
+   <agm-map [latitude]=lat [longitude]="lng" [zoom]="4" (mouseOver)="mouseOver(infoWindow)"
+   (mouseOut)="mouseout(infoWindow)">  
+    <agm-marker 
+    [latitude]=lat
+    [longitude]="lng">
+      <agm-info-window #infoWindow>
+        <strong>{{ country }}</strong>
+        <p>Confirmed: {{ confirmed }}</p>
+        <p>Dead: {{ dead }}</p>
+        <p>Recovered: {{ recovered }}</p>
+      </agm-info-window>
+    </agm-marker>
+   </agm-map>
+  </body>
+</html>
+  
+<router-outlet></router-outlet>
